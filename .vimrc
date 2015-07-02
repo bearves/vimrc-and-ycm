@@ -102,7 +102,7 @@ set completeopt-=preview
 " 从第一个键入字符就开始罗列匹配项
 let g:ycm_min_num_of_chars_for_completion=1
 " 禁止缓存匹配项，每次都重新生成匹配项
-let g:ycm_cache_omnifunc=0
+let g:ycm_cache_omnifunc=1
 " 语法关键字补全
 let g:ycm_seed_identifiers_with_syntax=1
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
@@ -127,8 +127,11 @@ nnoremap <c-x>b :CtrlPBuffer<cr>
 " buffer 切换快捷键
 nnoremap <C-Tab> :bp<cr>
 nnoremap <C-S-Tab> :bn<cr>
+" buffer switch in terminal mode
+nnoremap <leader>bp :bp<cr>
+nnoremap <leader>bn :bn<cr>
 " my shortcuts
-nnoremap <C-x><C-f> :e
+nnoremap <C-x><C-f> :CtrlPMRUFiles<CR>
 nmap <F5> :!bash ./makerun.sh<CR>
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
